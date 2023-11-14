@@ -40,5 +40,17 @@ poetry add httpx
 ### Pytest
 ```bash
 .venv) (base) ➜  php-restapi git:(master) ✗ pytest -v tests 
+==================================================== test session starts ====================================================
+platform darwin -- Python 3.9.7, pytest-7.4.3, pluggy-1.3.0 -- /Users/euiyoung.hwang/ES/Python_Workspace/python-assignment/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /Users/euiyoung.hwang/ES/Python_Workspace/python-assignment/tests
+configfile: pytest.ini
+plugins: cov-4.1.0, anyio-3.7.1
+collected 5 items                                                                                                           
 
+tests/test_api.py::test_mock_api PASSED                                                                               [ 20%]
+tests/test_api.py::test_mock_lookup_api PASSED                                                                        [ 40%]
+tests/test_lookup.py::test_skip SKIPPED (no way of currently testing this)                                            [ 60%]
+tests/test_lookup.py::test_sample_string_sort PASSED                                                                  [ 80%]
+tests/test_lookup.py::test_read_file_sort PASSED                                                                      [100%]
 ```
