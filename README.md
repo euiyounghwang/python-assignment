@@ -39,7 +39,7 @@ poetry add pytest-asyncio
 ### Dataset
 - Use dataset from 'https://raw.githubusercontent.com/dwyl/english-words/master/words.txt'
 
-### Swagger for RESTAPI
+### Soultion1: Test two json array for the logic on Swagger for RESTAPI
 - Developing an API for task performance testing (extracting results by comparing two lists through parallel processing)
 - Run FastAPI REST-API <i>https://github.com/euiyounghwang/python-assignment/blob/master/service_start.sh</i>
 ![Alt text](./screenshot/Fast-API.png)
