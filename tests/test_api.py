@@ -32,7 +32,7 @@ def test_mock_lookup_api(mock_client):
         ]
     }
     
-    # Create Item
+    # Create Post Method API
     response = mock_client.post("/v1/process_lookup", json=sample_payload)
     assert response.status_code == 200
     assert response.json() == {"result" : sample_payload}
