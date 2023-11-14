@@ -14,13 +14,13 @@ python-assignment
 https://python-poetry.org/docs/?ref=dylancastillo.co#installing-with-the-official-installer
 ```
 
-Using Python Virtual Environment
+### Using Python Virtual Environment
 ```bash
 python -m venv .venv
 source .venv/bin/activate
 ```
 
-Using Poetry: Create the virtual environment in the same directory as the project and install the dependencies:
+### Using Poetry: Create the virtual environment in the same directory as the project and install the dependencies:
 ```bash
 poetry config virtualenvs.in-project true
 poetry init
@@ -29,7 +29,7 @@ poetry add uvicorn
 poetry add pytz
 ```
 
-Pytest
+### Pytest
 ```bash
 .venv) (base) ➜  php-restapi git:(master) ✗ pytest -v tests 
 
