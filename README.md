@@ -28,6 +28,9 @@ poetry init
 poetry add fastapi
 poetry add uvicorn
 poetry add pytz
+poetry add pytest
+poetry add pytest-cov
+poetry add python-dotenv
 ```
 
 ### Pytest
