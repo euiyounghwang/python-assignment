@@ -24,5 +24,6 @@ class ServiceHandler(object):
             self.logger.info(json.dumps(results, indent=2))
             # print(f'{path}')
             self.util.write_file(output, os.path.basename(path), results)
+            
         except Exception as e:
             self.logger.error(e)
