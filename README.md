@@ -39,6 +39,33 @@ poetry add pytest-asyncio
 ### Dataset
 - Use dataset from 'https://raw.githubusercontent.com/dwyl/english-words/master/words.txt'
 
+### Swagger for RESTAPI
+- Developing an API for task performance testing (extracting results by comparing two lists through parallel processing)
+![Alt text](./screenshot/Fast-API.png)
+```bash
+API URL : http://localhost:7091/v1/process_lookup (POST)
+
+- INPUT JSON : {
+  "first_input_array": [
+    
+  ],
+  "second_input_array": [
+    "abc",
+    "xyz"
+  ]
+}
+
+- OUTPUT : {
+  "result": {
+    "first_input_array_lookup": [
+      "abc",
+      "xyz"
+    ],
+    "second_input_array_lookup": []
+  }
+}
+```
+
 ### Pytest
 ```bash
 .venv) (base) ➜  php-restapi git:(master) ✗ pytest -v tests 
