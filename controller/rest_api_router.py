@@ -1,7 +1,7 @@
 
 from fastapi import APIRouter
 from repository.schema import Lookup
-from injector import logger
+from inject.injector import logger
 import datetime
 import json
 
