@@ -6,7 +6,7 @@ class Utils(object):
     def __init__(self, logger):
         self.logger = logger
 
-    def read_file(self, path):
+    async def read_file(self, path):
         inputs = []
         try:
             with open(path, 'r') as f:
@@ -58,7 +58,7 @@ class Utils(object):
         return s_dict
     
     
-    def lookup_difference(self, source, dest):
+    async def lookup_difference(self, source, dest):
         ''' compare source and dest '''
         try:
             extract_result = [k for k, v in dest.items() if k not in source.keys()]

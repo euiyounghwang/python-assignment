@@ -17,7 +17,7 @@ async def work(path1, path2, output) -> None:
     try:
         logger.info(f'work from {path1}, {path2} -> {output}')
         
-        source, dest = service_inject.load_files(path1, path2)
+        source, dest = await service_inject.load_files(path1, path2)
         
         ''' call service_inject.extract_results twice times to write file '''
         '''
@@ -26,9 +26,10 @@ async def work(path1, path2, output) -> None:
         '''
         ''' call call service_inject.extract_results simultaneously to write file '''
         result = await asyncio.gather(
-            service_inject.extract_results(output, path1, source, dest),
-            service_inject.extract_results(output, path2, dest, source)
+            service_inject.extract_results_parallel(output, path1, source, dest),
+            service_inject.extract_results_parallel(output, path2, dest, source)
         )
+        # print(result)
 
     except Exception as e:
         pass
