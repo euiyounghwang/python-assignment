@@ -16,7 +16,8 @@ class Utils(object):
                     # print(f'read line -- {line}')
                     if not line:
                         break
-                    self.inputs.append(line)
+                    if not '#' in line:
+                        self.inputs.append(line)
                 return self.inputs
         except Exception as e:
             self.logger.error(e)
