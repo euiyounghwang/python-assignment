@@ -41,7 +41,7 @@ poetry add pytest-asyncio
 
 ### Soultion1: Test two json array for the logic on Swagger for RESTAPI
 - Developing an API for task performance testing (extracting results by comparing two lists through parallel processing)
-- Run FastAPI based REST-API: <i>https://github.com/euiyounghwang/python-assignment/blob/master/service_start.sh</i>
+- Run FastAPI based REST-API : <i>https://github.com/euiyounghwang/python-assignment/blob/master/service_start.sh</i>
 ![Alt text](./screenshot/Fast-API.png)
 ```bash
 API URL : http://localhost:7091/v1/process_lookup (POST)
