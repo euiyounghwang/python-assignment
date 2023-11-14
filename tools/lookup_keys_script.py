@@ -7,22 +7,22 @@ import argparse
 import os, sys
 sys.path.append(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
 
-from inject.injector import (logger, util)
+from inject.injector import (logger, util, service_inject)
 
 
-def load_files(path1, path2):
-    ''' compare and write results '''
-    source = util.read_file(path1)
-    dest = util.read_file(path2)
+# def load_files(path1, path2):
+#     ''' compare and write results '''
+#     source = util.read_file(path1)
+#     dest = util.read_file(path2)
     
-    return source, dest
+#     return source, dest
 
 
-def extract_results(path, source, dest):
-    results = util.lookup_difference(source=util.sort_str_dict(source), dest=util.sort_str_dict(dest))
-    logger.info(json.dumps(results, indent=2))
-    # print(f'{path}')
-    util.write_file(output, os.path.basename(path), results)
+# def extract_results(path, source, dest):
+#     results = util.lookup_difference(source=util.sort_str_dict(source), dest=util.sort_str_dict(dest))
+#     logger.info(json.dumps(results, indent=2))
+#     # print(f'{path}')
+#     util.write_file(output, os.path.basename(path), results)
 
 
 def work(path1, path2, output):
@@ -30,10 +30,10 @@ def work(path1, path2, output):
     try:
         logger.info(f'work from {path1}, {path2} -> {output}')
         
-        source, dest = load_files(path1, path2)
+        source, dest = service_inject.load_files(path1, path2)
         
-        extract_results(path1, source, dest)
-        extract_results(path2, dest, source)
+        service_inject.extract_results(output, path1, source, dest)
+        service_inject.extract_results(output, path2, dest, source)
         
     except Exception as e:
         logger.error("work - {}".format(str(e)))
