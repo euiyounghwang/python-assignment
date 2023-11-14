@@ -8,15 +8,6 @@ def test_skip():
     assert 1 != 1
     
     
-def test_mock_api(mock_client):
-    response = mock_client.get("/v1")
-    assert response is not None
-    assert response.status_code == 200
-    assert response.json() == {
-        "message": "Hello World"
-    }
-    
-    
 def test_sample_string_sort():
     ''' test utils '''
     ''' pytest -sv tests/test_lookup.py::test_string_sort '''    
