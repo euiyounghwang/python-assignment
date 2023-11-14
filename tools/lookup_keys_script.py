@@ -5,25 +5,34 @@ from datetime import datetime
 from threading import Thread
 import argparse
 import os, sys
+import asyncio
 sys.path.append(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
 
 from inject.injector import (logger, util, service_inject)
 
 
 
-def work(path1, path2, output):
+async def work(path1, path2, output) -> None:
     ''' main task '''
     try:
         logger.info(f'work from {path1}, {path2} -> {output}')
         
         source, dest = service_inject.load_files(path1, path2)
         
+        ''' call service_inject.extract_results twice times to write file '''
+        '''
         service_inject.extract_results(output, path1, source, dest)
         service_inject.extract_results(output, path2, dest, source)
-        
-    except Exception as e:
-        logger.error("work - {}".format(str(e)))
+        '''
+        ''' call call service_inject.extract_results simultaneously to write file '''
+        result = await asyncio.gather(
+            service_inject.extract_results(output, path1, source, dest),
+            service_inject.extract_results(output, path2, dest, source)
+        )
 
+    except Exception as e:
+        pass
+        
 
   
 if __name__ == "__main__":
@@ -53,10 +62,13 @@ if __name__ == "__main__":
     # 'Multiprocessing' is that we can use for running with multiple process
     # --
     try:
-        th1 = Thread(target=work, args=(input_1, input_2, output))
-        th1.start()
-        th1.join()
+        # loop = asyncio.get_event_loop()
+        # loop.run_until_complete(work(input_1, input_2, output))
+        asyncio.run(work(input_1, input_2, output))
+        # th1 = Thread(target=work, args=(input_1, input_2, output))
+        # th1.start()
+        # th1.join()
         
-    except ThreadIssue:
-        pass
+    except Exception as e:
+        logger.error(e)
     

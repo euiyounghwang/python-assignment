@@ -32,6 +32,7 @@ poetry add pytest
 poetry add pytest-cov
 poetry add python-dotenv
 poetry add httpx
+poetry add asyncio
 ```
 
 ### Dataset
