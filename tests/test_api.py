@@ -20,11 +20,28 @@ def test_mock_lookup_api(mock_client):
     }
     
     # --
-    # Lookup the different keys
+    # Case#1: Lookup the different keys
+    # --
+    sample_payload ={
+        "first_input_array_lookup": [
+            "xyz"
+        ],
+        "second_input_array_lookup": [
+            "test"
+        ]
+    }
+    
+    # Create Post Method API
+    response = mock_client.post("/v1/process_lookup", json=sample_payload)
+    assert response.status_code == 200
+    assert response.json() == {"result" : sample_payload}
+    
+     # --
+    # Case#2: Lookup the different keys
+    # --
     sample_payload ={
         "first_input_array": [
-            "test",
-            "abc"
+            
         ],
         "second_input_array": [
             "abc",
@@ -35,5 +52,14 @@ def test_mock_lookup_api(mock_client):
     # Create Post Method API
     response = mock_client.post("/v1/process_lookup", json=sample_payload)
     assert response.status_code == 200
-    assert response.json() == {"result" : sample_payload}
+    assert response.json() == {
+        "result" : {
+            "first_input_array_lookup": [
+                "abc",
+                "xyz"
+            ],
+            "second_input_array_lookup": [
+            ]
+        }
+    }
     

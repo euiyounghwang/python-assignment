@@ -17,11 +17,12 @@ def test_sample_string_sort():
     assert results == {'apple': 1, 'banana': 2, 'cAr': 3, 'car': 4, 'dog': 5, 'fan': 6}
     
 
-def test_read_file_sort():
+@pytest.mark.asyncio
+async def test_read_file_sort():
     ''' pytest -sv tests/test_lookup.py::test_read_file_sort '''
     # --
     # test file before sorting
-    inputs = util.read_file('./dataset/a.txt')
+    inputs = await util.read_file('./dataset/a.txt')
     assert inputs is not None
     print(inputs)
     assert inputs ==  [
@@ -40,7 +41,7 @@ def test_read_file_sort():
     # --
     # test file after sorting
     # Shuffle list for testing 'sort_str_list' function
-    random.shuffle(inputs)
+    # random.shuffle(inputs)
     
     inputs = util.sort_str_dict(inputs)
     assert inputs is not None

@@ -50,12 +50,8 @@ async def processing(request: Lookup):
         
         response_json = {
             'result' : {
-                'first_input_array_lookup' : [
-                    result[0]
-                ],
-                'second_input_array_lookup' : [
-                    result[1]
-                ]
+                'first_input_array_lookup' : result[0],
+                'second_input_array_lookup' : result[1]
             }
         }
                
