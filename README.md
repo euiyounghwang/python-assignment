@@ -21,7 +21,7 @@ source .venv/bin/activate
 ```
 
 ### Using Poetry
-- Create the virtual environment in the same directory as the project and install the dependencies:
+- Create the virtual environment in the same directory as the project and install the dependencies with pytest:
 ```bash
 poetry config virtualenvs.in-project true
 poetry init
@@ -31,6 +31,7 @@ poetry add pytz
 poetry add pytest
 poetry add pytest-cov
 poetry add python-dotenv
+poetry add httpx
 ```
 
 ### Pytest
