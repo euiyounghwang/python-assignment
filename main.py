@@ -2,6 +2,7 @@
 from fastapi import FastAPI
 from starlette.middleware.cors import CORSMiddleware
 from controller import (rest_api_router)
+from injector import logger
 import datetime
 import json
 
@@ -22,8 +23,8 @@ app.add_middleware(
          status_code=200,
          description="Default GET API", 
          summary="Default GET API")
-async def root():
-    print('root')
+async def defalut_api():
+    logger.info('defalut_api')
     return {"message": "Hello World"}
 
 

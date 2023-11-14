@@ -1,4 +1,3 @@
-from injector import logger
 
 def read_file(path):
     try:

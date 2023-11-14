@@ -1,6 +1,9 @@
 
 from fastapi import APIRouter
 from repository.schema import Lookup
+from injector import logger
+import datetime
+import json
 
 app = APIRouter(
     prefix="/v1",
@@ -18,7 +21,7 @@ async def processing(request: Lookup):
         StartTime = datetime.datetime.now()
      
         request_json = request.to_json()
-        print("processing : {}".format(json.dumps(request_json, indent=2)))
+        logger.info("processing : {}".format(json.dumps(request_json, indent=2)))
         
         EndTime = datetime.datetime.now()
 
@@ -32,4 +35,4 @@ async def processing(request: Lookup):
         return {'result' : request_json}
         
     except Exception as e:
-        print(e)
+        logger.error(e)
