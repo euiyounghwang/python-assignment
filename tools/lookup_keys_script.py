@@ -10,20 +10,6 @@ sys.path.append(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
 from inject.injector import (logger, util, service_inject)
 
 
-# def load_files(path1, path2):
-#     ''' compare and write results '''
-#     source = util.read_file(path1)
-#     dest = util.read_file(path2)
-    
-#     return source, dest
-
-
-# def extract_results(path, source, dest):
-#     results = util.lookup_difference(source=util.sort_str_dict(source), dest=util.sort_str_dict(dest))
-#     logger.info(json.dumps(results, indent=2))
-#     # print(f'{path}')
-#     util.write_file(output, os.path.basename(path), results)
-
 
 def work(path1, path2, output):
     ''' main task '''
