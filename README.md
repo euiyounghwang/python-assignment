@@ -7,7 +7,7 @@ python-assignment (Deadline: Wednesday, November 15)
 -  Both input files consist of lines sorted in lexicographically ascending order based on ASCII values. The code should produce two output files:
 - The first output file should contain lines that are present in the first input file but not in the second input file.
 - The second output file should contain lines that are present in the second input file but not in the first input file.
-- Solution: __<i>I have two ways(1. REST-API based: <i>https://github.com/euiyounghwang/python-assignment/blob/master/service_start.sh</i>, ) to find different things in different files or strings using SWAGGER and Script</i>__
+- Solution: __<i>I have two ways(1. REST-API based: <i>https://github.com/euiyounghwang/python-assignment/blob/master/service_start.sh</i>, Run Script: <i>https://github.com/euiyounghwang/python-assignment/blob/master/run-script.sh</i>) to find different things in different files or strings using SWAGGER and Script</i>__
 
 ### Install Poerty
 ```
@@ -66,6 +66,12 @@ API URL : http://localhost:7091/v1/process_lookup (POST)
   }
 }
 ```
+
+### Soultion2: Run the script for extract the different work in the file
+- I performed file processing on an asynchronous basis to improve performance when performing the assignment
+- Run Script : <i>https://github.com/euiyounghwang/python-assignment/blob/master/run-script.sh</i>
+- Performed logic verification through pytest (<i>https://github.com/euiyounghwang/python-assignment/blob/master/pytest.sh</i>).
+
 
 ### Pytest
 ```bash
