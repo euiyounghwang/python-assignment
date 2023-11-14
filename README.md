@@ -34,6 +34,9 @@ poetry add python-dotenv
 poetry add httpx
 ```
 
+### Dataset
+- Use dataset from 'https://raw.githubusercontent.com/dwyl/english-words/master/words.txt'
+
 ### Pytest
 ```bash
 .venv) (base) ➜  php-restapi git:(master) ✗ pytest -v tests 
