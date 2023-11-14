@@ -7,7 +7,7 @@ python-assignment
 -  Both input files consist of lines sorted in lexicographically ascending order based on ASCII values. The code should produce two output files:
 - The first output file should contain lines that are present in the first input file but not in the second input file.
 - The second output file should contain lines that are present in the second input file but not in the first input file.
-- Solution: __<i>I will provide two ways for lookup the different keys from files/test string using SWAGGER and Script</i>__
+- Solution: __<i>I have two ways to find different things in different files or strings using SWAGGER and Script</i>__
 
 ### Install Poerty
 ```
