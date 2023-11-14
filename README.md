@@ -75,7 +75,7 @@ API URL : http://localhost:7091/v1/process_lookup (POST)
 
 ### Pytest
 ```bash
-.venv) (base) ➜  php-restapi git:(master) ✗ pytest -v tests 
+(.venv) ➜  python-assignment git:(master) ./pytest.sh
 ==================================================== test session starts ====================================================
 platform darwin -- Python 3.9.7, pytest-7.4.3, pluggy-1.3.0 -- /Users/euiyoung.hwang/ES/Python_Workspace/python-assignment/.venv/bin/python
 cachedir: .pytest_cache
